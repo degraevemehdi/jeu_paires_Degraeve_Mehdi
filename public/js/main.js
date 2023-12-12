@@ -54,8 +54,8 @@ let shuffleCards = ()=>{
         faceCard.classList = "face";
         backCard.classList = "back";
         section.appendChild(card);
-        card.appendChild(backCard);
         card.appendChild(faceCard);
+        card.appendChild(backCard);
         faceCard.src = element.srcimg;
         
         
