@@ -23,3 +23,17 @@
 // - Si vous avez réussis à faire avec 3 images , vous pouvez essayez avec 4 .
 // - Si vous avez réussis a les faire  avec 3 images et 4 images , créer 2 modes de jeu à l'utilisateur , normal et difficile . Sur le tableau des scores , une nouvelle colonne sera la pour détérminer quel genre de mode le joueur à réussis le jeu (avec son pseudo et son score bien sûr).
 // - Si vous avez complétement finis , n'hésitez pas à rajouter du style , et soyez fier de vous.
+
+let image = [{ srcimg :"./public/img/hulk.jpg",name: "hulk"},
+{ srcimg :"./public/img/ghostrider.jpg",name:"ghostrider"}
+,{ srcimg :"./public/img/spiderman.jpg",name :"spiderman"},
+{ srcimg :"./public/img/hulk.jpg",name:"hulk"},
+{ srcimg :"./public/img/ghostrider.jpg",name:"ghostrider"}
+,{ srcimg :"./public/img/spiderman.jpg",name:"spiderman"}];
+
+function shuffleCards (){
+    let cardData = image;
+    console.log(cardData);
+    cardData.sort()
+}
+shuffleCards();

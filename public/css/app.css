@@ -18,7 +18,6 @@ body{
     display: flex;
     align-items: last baseline;
     padding: .8rem;
-    
 
 }
 .content input{
@@ -35,16 +34,16 @@ body{
     border: 1px dashed ;
     font-size: 1.5rem;
     color: antiquewhite;
+
 }
 .cards{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 30px;
     text-align: center;
-    
 
 }
-.card img{
+.back-card img{
     width: 200px;
     height: 300px;
     border: 2px solid orange;
