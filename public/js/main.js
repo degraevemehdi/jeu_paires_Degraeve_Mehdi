@@ -30,10 +30,40 @@ let image = [{ srcimg :"./public/img/hulk.jpg",name: "hulk"},
 { srcimg :"./public/img/hulk.jpg",name:"hulk"},
 { srcimg :"./public/img/ghostrider.jpg",name:"ghostrider"}
 ,{ srcimg :"./public/img/spiderman.jpg",name:"spiderman"}];
+let section = document.querySelector("#game");
+console.log(section);
 
-function shuffleCards (){
+//---- Random Cards :
+let  randomCards = () => {
     let cardData = image;
     console.log(cardData);
     cardData.sort((a,b) => Math.random()-0.5);
+    return cardData;
 }
+//---- Keep the properties from a other function to shuffle the cards into the html:
+// generate function:
+let shuffleCards = ()=>{
+    let cardData = randomCards();
+    cardData.forEach(element => {
+        console.log(element);
+        //hmtl :
+        let card = document.createElement("div");
+        let faceCard = document.createElement("img");
+        let backCard = document.createElement("div");
+        card.classList = "card";
+        faceCard.classList = "face";
+        backCard.classList = "back";
+        section.appendChild(card);
+        card.appendChild(backCard);
+        card.appendChild(faceCard);
+        faceCard.src = element.srcimg;
+        
+        
+    });
+};
 shuffleCards();
+
+
+
+
+
