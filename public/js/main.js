@@ -34,6 +34,6 @@ let image = [{ srcimg :"./public/img/hulk.jpg",name: "hulk"},
 function shuffleCards (){
     let cardData = image;
     console.log(cardData);
-    cardData.sort()
+    cardData.sort((a,b) => Math.random()-0.5);
 }
 shuffleCards();
