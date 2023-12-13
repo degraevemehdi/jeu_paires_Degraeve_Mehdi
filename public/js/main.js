@@ -38,10 +38,14 @@ console.log(section);
 let header = document.querySelector("#start-game");
 let input = header.querySelector("input");
 let button = header.querySelector("button");
+let levels = document.querySelector("#levels");
+let easyButton = levels.querySelector("button");
+let play = button.nextElementSibling;
 let score = document.querySelector("#score");
 let h1Score = score.querySelector("h1");
 let pseudo = score.querySelector("p");
 let pseudoSpan = pseudo.firstElementChild;
+let pseudoName;
 
 console.log(header);
 console.log(input);
@@ -54,8 +58,22 @@ button.addEventListener("click",function(){
     let inputValue = input.value;
     h1Score.innerText = `Welcome ${input.value}`;
     pseudoSpan.innerText = inputValue;
+    score.style.display = "flex";
+    pseudoName = true;
+    
+});
+play.addEventListener("click",function(){
+    if (pseudoName) {
+        levels.style.display = "flex";
+        easyButton.addEventListener("click",function(){
+            header.style.display ="none";
+            section.style.display = "grid";
+            shuffleCards()
+        })
 
-
+    }else{
+        alert("save at first your pseudo name");
+    }
 })
 
 
@@ -122,7 +140,6 @@ let checkCard = (e)=>{
     
 
 }
-shuffleCards();
 
 
 

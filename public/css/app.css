@@ -14,37 +14,64 @@ body{
 #start-game{
     display: flex;
     justify-content: center;
-    gap: 1em;
-    align-items: center;
     flex-direction: column;
-    padding-top: 100px;
-    color: aliceblue;
+    align-items: center;
+    gap: 10px;
+    
 }
-#start-game h1,p{
+#pseudo{
+    padding-top: 100px;
+    gap: 1em;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#pseudo h1,p{
     font-family: 'Bungee Spice', sans-serif;
 
+
 }
-#start-game input,button{
+#pseudo input,button{
     outline: none;
     font-family: 'Silkscreen', sans-serif;
 }
-#start-game button{
+#pseudo button{
     padding: .2em .5em;
+}
+#levels{
+    display: none;
+    gap: 10px;
+}
+#levels button:first-child{
+    outline: none;
+    background-color: yellow;
+}
+#levels button:nth-child(2){
+    outline: none;
+    background-color: orange;
+}
+#levels button:last-child{
+    outline: none;
+    background-color: red;
 }
 #score{
     width: 500px;
     height: 200px;
     border: 2px dashed;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: aliceblue;
 }
 #score span{
     font-family: 'Silkscreen', sans-serif;
 }
 #score h1{
     margin-bottom: 1em;
+    font-family: 'Bungee Spice', sans-serif;
     
 }
 
