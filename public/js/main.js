@@ -42,6 +42,7 @@ let  randomCards = () => {
 }
 //---- Keep the properties from a other function to shuffle the cards into the html:
 // generate function:
+let cards = document.querySelectorAll(".card")
 let shuffleCards = ()=>{
     let cardData = randomCards();
     cardData.forEach(element => {
@@ -54,17 +55,36 @@ let shuffleCards = ()=>{
         faceCard.classList = "face";
         backCard.classList = "back";
         faceCard.src = element.srcimg;
+        card.setAttribute("name",element.name);
         section.appendChild(card);
         card.appendChild(faceCard);
         card.appendChild(backCard);
         card.addEventListener("click",function(e) {
             card.classList.add("toggleCard");
+            checkCard(e)
             
-        })
+        });
         
     });
 };
 
+let checkCard = (e)=>{
+    let clickedCard = e.target;
+    clickedCard.classList.add("flipCard");
+    let flipCard = document.querySelectorAll(".flipCard");
+    console.log(clickedCard);
+    console.log(flipCard);
+    let count = 0;
+    if(flipCard.length === 2){
+        if (flipCard[0].getAttribute("name")===flipCard[1].getAttribute("name")){
+            console.log("match card");
+        }else{
+            console.log("not match try again");
+        }
+    }
+    
+
+}
 shuffleCards();
 
 
