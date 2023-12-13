@@ -78,8 +78,18 @@ let checkCard = (e)=>{
     if(flipCard.length === 2){
         if (flipCard[0].getAttribute("name")===flipCard[1].getAttribute("name")){
             console.log("match card");
+            flipCard.forEach(element =>{
+                element.classList.remove("flipCard");
+            })
         }else{
             console.log("not match try again");
+            flipCard.forEach(element => {
+                setTimeout(() => {
+                    element.classList.remove("toggleCard");
+                }, 1000);
+                element.classList.remove("flipCard")
+                
+            });
         }
     }
     
