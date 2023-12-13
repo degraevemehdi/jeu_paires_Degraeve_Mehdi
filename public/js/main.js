@@ -33,6 +33,33 @@ let image = [{ srcimg :"./public/img/hulk.jpg",name: "hulk"},
 let section = document.querySelector("#game");
 console.log(section);
 
+//------Changing pseudo + alert :
+
+let header = document.querySelector("#start-game");
+let input = header.querySelector("input");
+let button = header.querySelector("button");
+let score = document.querySelector("#score");
+let h1Score = score.querySelector("h1");
+let pseudo = score.querySelector("p");
+let pseudoSpan = pseudo.firstElementChild;
+
+console.log(header);
+console.log(input);
+console.log(button);
+console.log(score);
+console.log(h1Score);
+console.log(pseudoSpan);
+
+button.addEventListener("click",function(){
+    let inputValue = input.value;
+    h1Score.innerText = `Welcome ${input.value}`;
+    pseudoSpan.innerText = inputValue;
+
+
+})
+
+
+
 //---- Random Cards :
 let  randomCards = () => {
     let cardData = image;

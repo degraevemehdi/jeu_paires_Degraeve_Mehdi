@@ -2,21 +2,63 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 body{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../img/marvel-snap.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
-    background: blue;
+    width: 100vw;
+}
+#start-game{
     display: flex;
     justify-content: center;
+    gap: 1em;
     align-items: center;
     flex-direction: column;
+    padding-top: 100px;
+    color: aliceblue;
 }
+#start-game h1,p{
+    font-family: 'Bungee Spice', sans-serif;
+
+}
+#start-game input,button{
+    outline: none;
+    font-family: 'Silkscreen', sans-serif;
+}
+#start-game button{
+    padding: .2em .5em;
+}
+#score{
+    width: 500px;
+    height: 200px;
+    border: 2px dashed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#score span{
+    font-family: 'Silkscreen', sans-serif;
+}
+#score h1{
+    margin-bottom: 1em;
+    
+}
+
+
+
 #game{
-    display: grid;
+    display: none;
     grid-template-columns: repeat(3,5rem);
     grid-template-rows: repeat(2,5rem);
+    justify-content:center ;
+    align-content: center;
     grid-gap:2rem;
     perspective: 800px;
+    height: 100vh;
 }
 .card{
     position: relative;
