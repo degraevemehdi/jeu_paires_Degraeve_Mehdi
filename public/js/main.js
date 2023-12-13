@@ -53,14 +53,18 @@ let shuffleCards = ()=>{
         card.classList = "card";
         faceCard.classList = "face";
         backCard.classList = "back";
+        faceCard.src = element.srcimg;
         section.appendChild(card);
         card.appendChild(faceCard);
         card.appendChild(backCard);
-        faceCard.src = element.srcimg;
-        
+        card.addEventListener("click",function(e) {
+            card.classList.add("toggleCard");
+            
+        })
         
     });
 };
+
 shuffleCards();
 
 

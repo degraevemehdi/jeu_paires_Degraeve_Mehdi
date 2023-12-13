@@ -4,32 +4,43 @@
     box-sizing: border-box;
 }
 body{
+    height: 100vh;
+    background: blue;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background:cornflowerblue;
-    
+    flex-direction: column;
 }
-
-section{
+#game{
     display: grid;
-    grid-template-columns: repeat(3,10rem);
-    grid-template-rows: repeat(2,10rem);
-    gap:2rem;
-
+    grid-template-columns: repeat(3,5rem);
+    grid-template-rows: repeat(2,5rem);
+    grid-gap:2rem;
+    perspective: 800px;
 }
 .card{
-    transition: all 2s ease;
-    transform: rotateY(180deg);
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 2s ;
+    box-shadow: rgb(0, 0, 0,0.5)1px 5px 10px;
+
 }
-.face
-,.back {
-    height: 100%;
+.face,
+.back{
     width: 100%;
-    vfv
+    height: 100%; 
+    position: absolute;
 }
 .back{
     background: white;
+    backface-visibility: hidden;
 }
+/* .card:active{
+    
+    transform: rotateY(180deg);
 
+} */
+
+.toggleCard{
+    transform: rotateY(180deg);
+}
