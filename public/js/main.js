@@ -34,51 +34,52 @@ let image = [{ srcimg :"./public/img/hulk.jpg",name: "hulk"},
 //------------------------ MEDIUM MODE -------------------------
 
 //------------------------ HARD MODE -------------------------
+let body = document.body;
 let section = document.querySelector("#game");
 console.log(section);
 
 //------Changing pseudo + alert :
 
-// let header = document.querySelector("#start-game");
-// let input = header.querySelector("input");
-// let button = header.querySelector("button");
-// let levels = document.querySelector("#levels");
-// let easyButton = levels.querySelector("button");
-// let play = button.nextElementSibling;
-// let score = document.querySelector("#score");
-// let h1Score = score.querySelector("h1");
-// let pseudo = score.querySelector("p");
-// let pseudoSpan = pseudo.firstElementChild;
-// let pseudoName;
+let header = document.querySelector("#start-game");
+let input = header.querySelector("input");
+let button = header.querySelector("button");
+let levels = document.querySelector("#levels");
+let easyButton = levels.querySelector("button");
+let play = button.nextElementSibling;
+let score = document.querySelector("#score");
+let h1Score = score.querySelector("h1");
+let pseudo = score.querySelector("p");
+let pseudoSpan = pseudo.firstElementChild;
+let pseudoName;
 
-// console.log(header);
-// console.log(input);
-// console.log(button);
-// console.log(score);
-// console.log(h1Score);
-// console.log(pseudoSpan);
+console.log(header);
+console.log(input);
+console.log(button);
+console.log(score);
+console.log(h1Score);
+console.log(pseudoSpan);
 
-// button.addEventListener("click",function(){
-//     let inputValue = input.value;
-//     h1Score.innerText = `Welcome ${input.value}`;
-//     pseudoSpan.innerText = inputValue;
-//     score.style.display = "flex";
-//     pseudoName = true;
+button.addEventListener("click",function(){
+    let inputValue = input.value;
+    h1Score.innerText = `Welcome ${input.value}`;
+    pseudoSpan.innerText = inputValue;
+    score.style.display = "flex";
+    pseudoName = true;
     
-// });
-// play.addEventListener("click",function(){
-//     if (pseudoName) {
-//         levels.style.display = "flex";
-//         easyButton.addEventListener("click",function(){
-//             header.style.display ="none";
-//             section.style.display = "grid";
-//             shuffleCards()
-//         });
+});
+play.addEventListener("click",function(){
+    if (pseudoName) {
+        levels.style.display = "flex";
+        easyButton.addEventListener("click",function(){
+            header.style.display ="none";
+            section.style.display = "grid";
+            shuffleCards()
+        });
 
-//     }else{
-//         alert("save at first your pseudo name");
-//     }
-// })
+    }else{
+        alert("save at first your pseudo name");
+    }
+})
 
 
 
@@ -150,6 +151,9 @@ let checkCard = (e)=>{
     if (toggleCard.length===6){
         setTimeout(() => {
             alert("you won");
+            section.style.display = "none";
+            body.style.background ="black";
+
         }, 1500);
     }
 
