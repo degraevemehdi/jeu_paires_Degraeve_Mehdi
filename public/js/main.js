@@ -39,7 +39,8 @@ let section = document.querySelector("#game");
 console.log(section);
 
 //------Changing pseudo + alert :
-
+let restart = document.querySelector(".restart")
+let win = document.querySelector(".win");
 let header = document.querySelector("#start-game");
 let input = header.querySelector("input");
 let button = header.querySelector("button");
@@ -150,15 +151,18 @@ let checkCard = (e)=>{
     }
     if (toggleCard.length===6){
         setTimeout(() => {
-            alert("you won");
+            win.style.display = "flex";
             section.style.display = "none";
-            body.style.background ="black";
-
+            body.style.background ="linear-gradient(#e66465, #9198e5)";
+            restart.addEventListener("click",function(){
+                location.reload()
+            })
+            
         }, 1500);
     }
 
 }
-shuffleCards()
+
 
 
 

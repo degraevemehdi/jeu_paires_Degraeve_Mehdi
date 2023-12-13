@@ -12,6 +12,14 @@ body{
     width: 100vw;
 
 }
+.win{
+    display: none;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
 #start-game{
     display: flex;
     justify-content: center;
