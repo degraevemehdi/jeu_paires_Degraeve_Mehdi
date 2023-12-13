@@ -24,57 +24,61 @@
 // - Si vous avez réussis a les faire  avec 3 images et 4 images , créer 2 modes de jeu à l'utilisateur , normal et difficile . Sur le tableau des scores , une nouvelle colonne sera la pour détérminer quel genre de mode le joueur à réussis le jeu (avec son pseudo et son score bien sûr).
 // - Si vous avez complétement finis , n'hésitez pas à rajouter du style , et soyez fier de vous.
 
+//------------------------ EASY MODE --------------------------
 let image = [{ srcimg :"./public/img/hulk.jpg",name: "hulk"},
 { srcimg :"./public/img/ghostrider.jpg",name:"ghostrider"}
 ,{ srcimg :"./public/img/spiderman.jpg",name :"spiderman"},
 { srcimg :"./public/img/hulk.jpg",name:"hulk"},
 { srcimg :"./public/img/ghostrider.jpg",name:"ghostrider"}
 ,{ srcimg :"./public/img/spiderman.jpg",name:"spiderman"}];
+//------------------------ MEDIUM MODE -------------------------
+
+//------------------------ HARD MODE -------------------------
 let section = document.querySelector("#game");
 console.log(section);
 
 //------Changing pseudo + alert :
 
-let header = document.querySelector("#start-game");
-let input = header.querySelector("input");
-let button = header.querySelector("button");
-let levels = document.querySelector("#levels");
-let easyButton = levels.querySelector("button");
-let play = button.nextElementSibling;
-let score = document.querySelector("#score");
-let h1Score = score.querySelector("h1");
-let pseudo = score.querySelector("p");
-let pseudoSpan = pseudo.firstElementChild;
-let pseudoName;
+// let header = document.querySelector("#start-game");
+// let input = header.querySelector("input");
+// let button = header.querySelector("button");
+// let levels = document.querySelector("#levels");
+// let easyButton = levels.querySelector("button");
+// let play = button.nextElementSibling;
+// let score = document.querySelector("#score");
+// let h1Score = score.querySelector("h1");
+// let pseudo = score.querySelector("p");
+// let pseudoSpan = pseudo.firstElementChild;
+// let pseudoName;
 
-console.log(header);
-console.log(input);
-console.log(button);
-console.log(score);
-console.log(h1Score);
-console.log(pseudoSpan);
+// console.log(header);
+// console.log(input);
+// console.log(button);
+// console.log(score);
+// console.log(h1Score);
+// console.log(pseudoSpan);
 
-button.addEventListener("click",function(){
-    let inputValue = input.value;
-    h1Score.innerText = `Welcome ${input.value}`;
-    pseudoSpan.innerText = inputValue;
-    score.style.display = "flex";
-    pseudoName = true;
+// button.addEventListener("click",function(){
+//     let inputValue = input.value;
+//     h1Score.innerText = `Welcome ${input.value}`;
+//     pseudoSpan.innerText = inputValue;
+//     score.style.display = "flex";
+//     pseudoName = true;
     
-});
-play.addEventListener("click",function(){
-    if (pseudoName) {
-        levels.style.display = "flex";
-        easyButton.addEventListener("click",function(){
-            header.style.display ="none";
-            section.style.display = "grid";
-            shuffleCards()
-        })
+// });
+// play.addEventListener("click",function(){
+//     if (pseudoName) {
+//         levels.style.display = "flex";
+//         easyButton.addEventListener("click",function(){
+//             header.style.display ="none";
+//             section.style.display = "grid";
+//             shuffleCards()
+//         });
 
-    }else{
-        alert("save at first your pseudo name");
-    }
-})
+//     }else{
+//         alert("save at first your pseudo name");
+//     }
+// })
 
 
 
@@ -85,8 +89,12 @@ let  randomCards = () => {
     cardData.sort((a,b) => Math.random()-0.5);
     return cardData;
 }
+
 //---- Keep the properties from a other function to shuffle the cards into the html:
 // generate function:
+let h1 = document.createElement("h1");
+let span = document.createElement("span");
+h1.appendChild(span);
 let cards = document.querySelectorAll(".card")
 let shuffleCards = ()=>{
     let cardData = randomCards();
@@ -104,6 +112,7 @@ let shuffleCards = ()=>{
         section.appendChild(card);
         card.appendChild(faceCard);
         card.appendChild(backCard);
+
         card.addEventListener("click",function(e) {
             card.classList.add("toggleCard");
             checkCard(e)
@@ -117,6 +126,7 @@ let checkCard = (e)=>{
     let clickedCard = e.target;
     clickedCard.classList.add("flipCard");
     let flipCard = document.querySelectorAll(".flipCard");
+    let toggleCard = document.querySelectorAll(".toggleCard")
     console.log(clickedCard);
     console.log(flipCard);
     let count = 0;
@@ -137,9 +147,14 @@ let checkCard = (e)=>{
             });
         }
     }
-    
+    if (toggleCard.length===6){
+        setTimeout(() => {
+            alert("you won");
+        }, 1500);
+    }
 
 }
+shuffleCards()
 
 
 

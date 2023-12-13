@@ -10,8 +10,9 @@ body{
     background-size: cover;
     height: 100vh;
     width: 100vw;
+
 }
-#start-game{
+/* #start-game{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -73,12 +74,12 @@ body{
     margin-bottom: 1em;
     font-family: 'Bungee Spice', sans-serif;
     
-}
+} */
 
 
 
 #game{
-    display: none;
+    display: grid;
     grid-template-columns: repeat(3,5rem);
     grid-template-rows: repeat(2,5rem);
     justify-content:center ;
@@ -87,6 +88,7 @@ body{
     perspective: 800px;
     height: 100vh;
 }
+
 .card{
     position: relative;
     transform-style: preserve-3d;
