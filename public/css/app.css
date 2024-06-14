@@ -112,7 +112,7 @@ body{
     pointer-events: none;
 }
 .back{
-    background: white;
+    background: linear-gradient(#e66465, #9198e5);
     backface-visibility: hidden;
 }
 /* .card:active{
